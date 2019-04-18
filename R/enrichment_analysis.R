@@ -141,9 +141,15 @@ enrichment_analysis <-function(subnet, mode=NULL, gene_universe){
         comps <-NULL
         }
   enrichment = enrich[[1]]
-  enrichment_complete = enrich[[2]]
-    enrichment_tab = do.call(rbind,lapply(c(1:length(enrichment_complete)),function(x) data.frame(Cluster=x,enrichment_complete[[x]])))
+    enrichment_complete = enrich[[2]]
 
+    novals<-which(unlist(sapply(enrich[[2]],function(x) is.null(dim(x)))))
+    if(length(novals)>0)
+        enrichment_complete <- enrichment_complete[-novals]
+    enrichment_tab = do.call(rbind,lapply(c(1:length(enrichment_complete)),function(x) data.frame(Cluster=x,enrichment_complete[[x]])))
+    more.than.two=which(sapply(enrichment_tab$Genes,function(x) length(unlist(strsplit(x,split=';')))>2))
+    if(length(more.than.two)>0)
+        enrichment_tab=enrichment_tab[more.than.two,]
     if(!is.null(comps))
         enrichment_tab = enrichment_tab%>%dplyr::left_join(comps,by='Cluster')
 
