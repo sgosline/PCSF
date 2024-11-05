@@ -20,6 +20,9 @@ Imports:
         methods,
         org.Hs.eg.db,
         Rcpp,
-        topGO
+        topGO,
+        dplyr,
+        tidyr,
+        readr
 LinkingTo: Rcpp, BH
 RoxygenNote: 6.0.1

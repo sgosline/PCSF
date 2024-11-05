@@ -5,6 +5,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // call_sr
 List call_sr(CharacterVector from, CharacterVector to, NumericVector cost, CharacterVector node_names, NumericVector node_prizes);
 RcppExport SEXP _PCSF_call_sr(SEXP fromSEXP, SEXP toSEXP, SEXP costSEXP, SEXP node_namesSEXP, SEXP node_prizesSEXP) {
