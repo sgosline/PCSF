@@ -4,9 +4,11 @@
 \name{Tgfb_phospho}
 \alias{Tgfb_phospho}
 \title{Phosphoproteomic data}
-\format{A named \code{numeric} vector, where terminal genes are named same as 
+\format{
+A named \code{numeric} vector, where terminal genes are named same as 
 in the interaction network and numeric values correspond to the importance of 
-the gene within the study.}
+the gene within the study.
+}
 \source{
 Tgfb_phos.txt \url{https://github.com/fraenkel-lab/OmicsIntegrator/tree/master/example/a549}
 }

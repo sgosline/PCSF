@@ -25,4 +25,4 @@ Imports:
         tidyr,
         readr
 LinkingTo: Rcpp, BH
-RoxygenNote: 6.0.1
+RoxygenNote: 7.3.2
