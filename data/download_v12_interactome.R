@@ -8,6 +8,7 @@
 #'  
 #' @return A data object
 #' @import readr
+#' @import dplyr
 #' @export
 #' 
 #' @examples 
@@ -30,7 +31,8 @@ download_interactome<-function(url='https://stringdb-downloads.org/download/prot
   
   mapred<-mapred|>dplyr::rename(protein2='protein1',gene2='gene1')
   
-  ntab<-ntab|>dplyr::left_join(mapred)
+  ntab<-ntab|>
+    dplyr::left_join(mapred)
   #are there dupes? - no, but they are directed!
   
   ntab<-ntab|>dplyr::select(from='gene1',to='gene2',combined_score)|>

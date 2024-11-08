@@ -32,10 +32,10 @@
 #' @examples
 #' \dontrun{
 #' library("PCSF")
-#' data("STRING")
+#' data("STRINGv12")
 #' data("Tgfb_phospho")
 #' terminals <- Tgfb_phospho
-#' ppi <- construct_interactome(STRING)
+#' ppi <- construct_interactome(STRINGv12)
 #' subnet <- PCSF_rand(ppi, terminals, n = 10, r =0.1, w = 2, b = 2, mu = 0.0005)}
 #' 
 #' @author Murodzhon Akhmedov

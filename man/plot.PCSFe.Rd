@@ -4,9 +4,16 @@
 \alias{plot.PCSFe}
 \title{Plot an interactive subnetwork with functional enrichment analysis}
 \usage{
-\method{plot}{PCSFe}(x, edge_width = 5, node_size = 30,
-  node_label_cex = 1, Terminal_node_legend = "Terminal",
-  Steiner_node_legend = "Steiner", ...)
+\method{plot}{PCSFe}(
+  x,
+  edge_width = 5,
+  node_size = 30,
+  node_label_cex = 1,
+  Terminal_node_legend = "Terminal",
+  Steiner_node_legend = "Steiner",
+  extra_node_colors = list(),
+  ...
+)
 }
 \arguments{
 \item{x}{An output subnetwork provided by the \code{enrichment_analysis}. 
@@ -22,11 +29,13 @@ A default value is 30. This value must be greater than 10.}
 \item{node_label_cex}{A \code{numeric} value to set a node label size. 
 A default value is 1.}
 
-\item{Terminal_node_legend}{A \code{string} to set a legend for \code{terminal} nodes. 
-A default legend is "Terminal".}
+\item{Terminal_node_legend}{A \code{string} to set a legend for \code{terminal} nodes.}
 
 \item{Steiner_node_legend}{A \code{string} to set a legend for \code{Steiner} nodes. 
 A default legend is "Steiner".}
+
+\item{extra_node_colors}{A \code{list} with colors of extra types of nodes added to the PCSF result, with the names of the list being the node type
+A default legend is "Terminal".}
 
 \item{...}{Ignored.}
 }

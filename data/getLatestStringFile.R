@@ -8,10 +8,10 @@ mapping<-readr::read_delim('https://stringdb-static.org/download/protein.info.v1
 
 newtab<-tab|>
   dplyr::rename(prot='protein1')|>
-  left_join(mapping)|>
+  dplyr::left_join(mapping)|>
   dplyr::select(from='gene',prot='protein2',combined_score)|>
-  left_join(mapping)|>
+  dplyr::left_join(mapping)|>
   dplyr::select(from,to='gene',combined_score)|>
   dplyr::mutate(cost=1-combined_score/1000)|>
   dplyr::select(from,to,cost)|>
-  distinct()
+  dplyr::distinct()
