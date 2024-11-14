@@ -165,7 +165,7 @@ function(ppi, terminals, w = 2, b = 1, mu = 0.0005, dummies){
 
     v = data.frame(output[[4]], output[[5]], type)
     names(v) = c("terminals", "prize", "type")
-    subnet = graph.data.frame(e,vertices=v,directed=F)
+    subnet = graph.data.frame(e,vertices=v,directed=T)
     E(subnet)$weight=as.numeric(output[[3]])
     subnet = delete_vertices(subnet, "DUMMY")
     subnet = delete_vertices(subnet, names(which(degree(subnet)==0)))
