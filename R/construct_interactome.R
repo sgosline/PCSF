@@ -38,7 +38,7 @@ function(ppi){
   node_names = unique(c(as.character(ppi[,1]),as.character(ppi[,2])))
   
   # Contruct an interaction network as igraph object
-  ppi.graph = graph.data.frame(ppi[,1:2],vertices=node_names,directed=F)
+  ppi.graph = graph.data.frame(ppi[,1:2],vertices=node_names,directed=TRUE)##SG modified to make directed
   E(ppi.graph)$weight=as.numeric(ppi[,3])
   ppi.graph = simplify(ppi.graph)
 

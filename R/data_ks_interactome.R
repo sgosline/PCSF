@@ -1,15 +1,15 @@
-#' Random phosphosite weights
-#' 
+#' Interactome from phosphosite plus and networkin combined
+#'  
 #' An interactome data set in which the nodes are named with gene symbols. This is now updated for v12 in 2024
 #' 
-#' @name Tgfb_psites
+#' @name PSP_NK
 #' 
-#' @format A list of 100 weights representing phosphosites in the kinase-substrate network
+#' @format A data frame with proteins connected to their sites and sites connected to the substrate protein
 #' 
 #' @docType data
-#' @usage Tgfb_psites
+#' @usage PSP_NK
 #' 
-#' @source  Randomly generated weights of phosphosites
+#' @source  Previously collected list of kinases: https://raw.githubusercontent.com/PNNL-CompBio/amlresistancenetworks/refs/heads/master/inst/PSP%26NetworKIN_Kinase_Substrate_Dataset_July2016.csv
 #' 
 #' @keywords data
 #' 

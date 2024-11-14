@@ -34,7 +34,7 @@ download_ks_interactome<-function(url='https://raw.githubusercontent.com/PNNL-Co
 
   ksi<-apply(kdat,1,function(x)
     #for each substrate interaction, add a link from the kinase gene -> substrate -> substrate gene
-    data.frame(from=c(x[['GENE']],x[['subval']]),to=c(x[['subval']],x[['SUB_GENE']]),
+    data.frame(from=c(x[['SUB_GENE']],x[['subval']]),to=c(x[['subval']],x[['GENE']]),
                cost=c(mval*1.5,mval/4)))%>%  ##arbitrary costs based on mean cost of edges around network
     do.call(rbind,.)
   ##todo: alter weights based on NK score

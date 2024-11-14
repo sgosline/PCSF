@@ -118,7 +118,7 @@ function(ppi, terminals, n = 10, r = 0.1, w = 2, b = 1, mu = 0.0005,dummies){
     colnames(edge)= c("source", "target")
     edge = edge[which(edge[,1]!="DUMMY"), ]
     edge = edge[which(edge[,2]!="DUMMY"), ]
-    graph = graph.data.frame(edge,directed=F)
+    graph = graph.data.frame(edge,directed=T)
     assign(paste0("graph_",i), get("graph"))
     all_nodes = c(all_nodes, V(graph)$name)
   }
