@@ -64,9 +64,11 @@ library("PCSF")
 data("STRINGv12")
 data("PSP_NK")
 data("Tgfb_phospho")
-data("")
-terminals <- Tgfb_phospho
-subnet <- PCSF_phos(STRINGV12, terminals, PSP_NK, phosterminals,n = 10, r =0.1, w = 2, b = 2, mu = 0.0005)}
+data("Tgfb_psites")
+terminals <-Tgfb_phospho
+phosterminals <- Tgfb_psites
+subnet <- PCSF_phos(STRINGv12, terminals, PSP_NK, phosterminals,n = 10, r =0.1, w = 2, b = 2, mu = 0.0005,fname='phos_test')
+}
 
 }
 \references{
